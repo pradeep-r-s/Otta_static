@@ -214,41 +214,57 @@
 
         /* Apps & Contact styles */
         .apps {
-            display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 28px
-        }
-        .app-card {
-            flex: 1;
-            min-width: 240px;
-            padding: 22px;
-            background: linear-gradient(180deg, #fff, #fff);
-            border-radius: 12px;
-            box-shadow: 0 8px 26px rgba(16, 24, 40, 0.06);
-            text-align: center;
-            transition: transform 300ms ease
-        }
-        .app-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .app-card img {
-            max-width: 84px;
-            margin-bottom: 12px
-        }
-        .app-card h3 {
-            margin-bottom: 10px;
-            color: var(--primary)
-        }
-        .app-card p {
-            margin-bottom: 16px
-        }
-        .app-card:hover {
-            transform: translateY(-6px)
-        }
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.app-card {
+    flex: 1;
+    min-width: 240px;
+    /* Removed padding from here so the link can fill the space */
+    background: linear-gradient(180deg, #fff, #fff);
+    border-radius: 12px;
+    box-shadow: 0 8px 26px rgba(16, 24, 40, 0.06);
+    text-align: center;
+    transition: transform 300ms ease;
+    overflow: hidden; /* Ensures the click area stays inside the rounded corners */
+}
+
+.app-card a {
+    display: block; /* Makes the link fill the whole card */
+    padding: 22px;  /* Moved padding here to make the whole card clickable */
+    color: var(--muted); /* Keeps paragraph text muted by default */
+    text-decoration: none;
+}
+
+.app-card img {
+    max-width: 84px;
+    margin-bottom: 12px;
+}
+
+.app-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.app-card p {
+    margin-bottom: 16px;
+    color: var(--muted);
+}
+
+/* Style for the "Get the App" text at the bottom */
+.btn-text {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.app-card:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+}
 
         /* Footer styles */
         footer {
@@ -444,21 +460,23 @@
         </div>
     </section>
 
-    <section id="apps">
+    <!-- <section id="apps">
         <h2 style="text-align:center" class="animate slide-up" data-animate-delay="100">Apps & Contact</h2>
         <div class="apps">
             <div class="app-card animate slide-up" data-animate-delay="160">
                 <a href="https://play.google.com/store/apps/details?id=com.SapthamiFoods.Restaurant" target="_blank"
                     style="text-decoration: none; color: inherit; display: block;">
                     <img src="resappp.jpeg" alt="Restaurant app">
-                    <h3>Restaurant Partner App</h3>
+                    <h3>Ooota Partner App</h3>
                     <p>Grow your business without commission.</p>
+                    <span class="btn-text">Get the App →</span>
                 </a>
             </div>
             <div class="app-card animate slide-up" data-animate-delay="220">
                 <img src="userappp.jpeg" alt="User app">
                 <h3>User App</h3>
                 <p>Order from local restaurants at restaurant prices.</p>
+                <span class="btn-text">Coming Soon...</span>
             </div>
             <div class="app-card animate slide-up" id="contact" data-animate-delay="280">
                 <img src="https://img.icons8.com/color/96/marker.png" alt="Location">
@@ -467,7 +485,38 @@
                 <p><strong>Phone:</strong> <a href="tel:9141071971/9187399840">9141071971 / 9187399840</a></p>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <section id="apps">
+    <h2 style="text-align:center" class="animate slide-up" data-animate-delay="100">Apps & Contact</h2>
+    <div class="apps">
+        
+        <div class="app-card animate slide-up" data-animate-delay="160">
+            <a href="https://play.google.com/store/apps/details?id=com.SapthamiFoods.Restaurant" target="_blank"
+                style="text-decoration: none; color: inherit; display: block; padding: 22px;">
+                <img src="resappp.jpeg" alt="Restaurant app">
+                <h3>Ooota Partner App</h3>
+                <p>Grow your business without commission.</p>
+                <span class="btn-text" style="color: var(--primary); font-weight: 600;">Get the App →</span>
+            </a>
+        </div>
+
+        <div class="app-card animate slide-up" data-animate-delay="220" style="padding: 22px;">
+            <img src="userappp.jpeg" alt="User app">
+            <h3>User App</h3>
+            <p>Order from local restaurants at restaurant prices.</p>
+            <span class="btn-text" style="color: var(--muted); font-weight: 600;">Coming Soon...</span>
+        </div>
+
+        <div class="app-card animate slide-up" id="contact" data-animate-delay="280" style="padding: 22px;">
+            <img src="https://img.icons8.com/color/96/marker.png" alt="Location">
+            <h3>Contact Us</h3>
+            <p style="margin-bottom: 5px;">Sapthami Business Solutions LLP</p>
+                <p><strong>Phone:</strong> <a href="tel:9141071971/9187399840">9141071971 / 9187399840</a></p>
+        </div>
+        
+    </div>
+</section>
 
     <footer class="animate slide-up" data-animate-delay="120">
         <div>© Ooota — Zero commission food delivery. All rights reserved.</div>
